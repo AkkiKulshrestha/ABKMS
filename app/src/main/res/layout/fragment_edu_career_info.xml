@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/form_background_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="10sp"
+            android:background="@drawable/btn_color_white">
+
+            <Spinner
+                android:id="@+id/Spn_Education"
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:entries="@array/spin_item_education"
+                android:padding="5dp"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/btn_color_white">
+
+            <Spinner
+                android:id="@+id/Spn_Occupation"
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:entries="@array/spin_item_occupation"
+                android:padding="5dp"/>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/edt_works_with"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center|start"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp"
+            android:minHeight="50sp"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:hint="@string/enter_works_with"
+            android:background="@drawable/form_bg_edittext_bg"
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            android:layout_weight="4"
+            />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/btn_color_white">
+
+            <Spinner
+                android:id="@+id/Spn_FamilyIncome"
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:entries="@array/spin_item_annual_salary"
+                android:padding="5dp"/>
+        </RelativeLayout>
+
+
+
+        <EditText
+            android:id="@+id/edt_Contribution_Abkms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center|start"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:minHeight="50sp"
+            android:padding="5dp"
+            android:hint="How you can contribute in ABKMS"
+            android:background="@drawable/form_bg_edittext_bg"
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:imeOptions="actionDone"
+            android:layout_weight="4"
+            />
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>

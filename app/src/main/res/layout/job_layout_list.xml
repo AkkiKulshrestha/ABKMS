@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:id="@+id/CardSchemeName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="15dp"
+    android:layout_marginEnd="10dp"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="10sp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cw_shadow_bg"
+        android:orientation="vertical">
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:weightSum="7"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Job Title: "
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:layout_weight="1.5"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/row_job_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4.5"
+
+                android:textColor="@color/red"
+                android:textSize="18dp"/>
+
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_delete"
+                android:textColor="@color/black"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:weightSum="10"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location: "
+                android:layout_weight="5"
+                android:layout_marginStart="5dp"
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/row_job_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:weightSum="10"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Experience Required: "
+                android:layout_weight="5"
+                android:layout_marginStart="5dp"
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/row_experience_required"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:weightSum="10"
+            android:orientation="horizontal">
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Salary: "
+                android:layout_weight="5"
+                android:layout_marginStart="5dp"
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/row_salary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
+
+
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/row_job_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"
+            android:layout_margin="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="5">
+
+
+                <TextView
+                    android:id="@+id/tv_PostedBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="80sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="12sp"
+
+                    android:textColor="@color/colorPrimary"
+                    android:padding="3dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="10sp"
+                    android:text="Job Posted By"
+
+                    android:textColor="@color/black"/>
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="5"
+                android:layout_marginStart="5dp">
+
+
+                <TextView
+                    android:id="@+id/tv_ContactNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="80sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimary"
+                    android:padding="3dp"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="10sp"
+
+                    android:text="Contact No."
+                    android:textColor="@color/black"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/row_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_grey"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:visibility="gone"
+            android:layout_weight="6"
+            android:minHeight="60sp"
+            android:editable="false"
+            android:layout_gravity="center|start"
+            android:gravity="center|start"
+            android:textSize="16sp"
+            android:textColorHint="@color/dark_grey"/>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

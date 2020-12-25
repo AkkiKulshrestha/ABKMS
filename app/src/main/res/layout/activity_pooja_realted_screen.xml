@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/LayoutBackToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true">
+    <include layout="@layout/toolback_with_back"
+        />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/LayoutBackToolbar"
+        android:layout_centerInParent="true"
+
+        android:fitsSystemWindows="true">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+
+
+            <RadioGroup
+                android:id="@+id/RGLang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="10"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/RbHindi"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hindi"
+                    android:minHeight="50sp"
+                    android:layout_weight="5"
+                    android:checked="true"
+                    android:textColor="@color/black"/>
+
+                <RadioButton
+                    android:id="@+id/RbEnglish"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/english"
+                    android:minHeight="50sp"
+                    android:layout_weight="5"
+                    android:textColor="@color/black"/>
+
+            </RadioGroup>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:id="@+id/LayoutPlayer"
+                android:visibility="gone"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_play"
+                    android:layout_width="60sp"
+                    android:layout_height="60sp"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    android:onClick="OnPlay"
+                    android:background="@color/colorAccent"
+                    android:src="@drawable/ic_play"/>
+
+                <ImageView
+                    android:id="@+id/iv_pause"
+
+                    android:layout_width="60sp"
+                    android:layout_height="60sp"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    android:onClick="OnPause"
+                    android:background="@color/colorAccent"
+                    android:src="@drawable/ic_pause"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_stop"
+                    android:layout_width="60sp"
+                    android:layout_height="60sp"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    android:onClick="OnStop"
+                    android:tint="@color/white"
+                    android:background="@color/colorAccent"
+                    android:src="@drawable/ic_stop"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_pooja_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginBottom="20sp"
+                android:layout_marginTop="10sp"
+                android:padding="5sp"
+                android:lineSpacingMultiplier="1.2"
+                />
+
+            <TextView
+                android:id="@+id/tv_history_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:background="@color/colorAccent"
+                android:layout_marginBottom="20sp"
+                android:layout_marginTop="10sp"
+                android:padding="5sp"
+                android:textColor="@color/white"
+                android:minHeight="50sp"
+                android:textSize="18sp"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/click_to_view_history_of_kulshrestha"
+                android:lineSpacingMultiplier="1.2"
+                />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <ExpandableListView
+                        android:id="@+id/expandable_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:groupIndicator="@null"
+                        android:childIndicator="@null">
+                    </ExpandableListView>
+
+
+
+                </LinearLayout>
+            <Button
+                android:id="@+id/BtnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20sp"
+                android:visibility="gone"
+                android:minHeight="60sp">
+
+
+            </Button>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

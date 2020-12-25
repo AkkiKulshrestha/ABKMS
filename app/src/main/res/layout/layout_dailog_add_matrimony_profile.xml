@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:app1="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="5sp"
+    android:layout_marginRight="5sp"
+    android:layout_gravity="center"
+    app:ignore="NamespaceTypo">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:id="@+id/layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:orientation="horizontal"
+
+            android:background="@color/colorPrimary"
+            android:weightSum="10">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:editable="false"
+                android:cursorVisible="false"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                android:layout_weight="9"
+                android:textAllCaps="true"
+                android:id="@+id/title"
+                android:text="ADD NEW MATRIMONY PROFILE"/>
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:layout_weight="1"
+                app1:srcCompat="@drawable/cross_white"
+                android:tint="@color/white"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                android:focusableInTouchMode="false"
+                />
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/header1"
+            android:background="@color/white"
+            android:layout_below="@+id/layout_title"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+
+
+                <EditText
+                    android:id="@+id/EdtApplicantName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_weight="5"
+                    android:background="@drawable/form_bg_edittext_bg"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center|start"
+                    android:hint="Profile Applicant Name *"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
+                    android:minHeight="55dp"
+                    android:textColor="@color/dark_grey"
+                    android:textColorHint="@color/dark_grey"
+                    android:textSize="14sp" />
+
+
+                <EditText
+                    android:id="@+id/EdtFatherName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_weight="5"
+                    android:background="@drawable/form_bg_edittext_bg"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center|start"
+                    android:hint="Father's Name *"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
+                    android:minHeight="55dp"
+                    android:textColor="@color/dark_grey"
+                    android:textColorHint="@color/dark_grey"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/EdtMotherName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_weight="5"
+                    android:background="@drawable/form_bg_edittext_bg"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center|start"
+                    android:hint="Mother's Name *"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPersonName"
+                    android:minHeight="55dp"
+                    android:textColor="@color/dark_grey"
+                    android:textColorHint="@color/dark_grey"
+                    android:textSize="14sp" />
+
+
+
+
+                <EditText
+                    android:id="@+id/EdtFamilyOriginPlace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_weight="5"
+                    android:background="@drawable/form_bg_edittext_bg"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center|start"
+                    android:hint="Family Origin App *"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:minHeight="55dp"
+                    android:textColor="@color/dark_grey"
+                    android:textColorHint="@color/dark_grey"
+                    android:textSize="14sp" />
+                <EditText
+                    android:id="@+id/EdtResidencePlace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_weight="5"
+                    android:background="@drawable/form_bg_edittext_bg"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center|start"
+                    android:hint="Residing Place *"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:minHeight="55dp"
+                    android:textColor="@color/dark_grey"
+                    android:textColorHint="@color/dark_grey"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/EdtContactNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_weight="5"
+                    android:background="@drawable/form_bg_edittext_bg"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center|start"
+                    android:hint="Contact No. *"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:minHeight="55dp"
+                    android:maxLength="10"
+                    android:textColor="@color/dark_grey"
+                    android:textColorHint="@color/dark_grey"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/Edt_DateOfBirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:background="@drawable/form_bg_edittext_bg"
+                    android:hint="Date Of Birth *"
+                    android:inputType="date"
+                    android:focusable="false"
+                    android:layout_weight="5"
+                    android:editable="false"
+                    android:padding="5dp"
+                    android:paddingTop="5dp"
+                    android:textColorHint="@color/dark_grey"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="14sp"
+                    />
+
+
+                <EditText
+                    android:id="@+id/EdtWhatAppNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_weight="5"
+                    android:background="@drawable/form_bg_edittext_bg"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center|start"
+                    android:hint="WhatsApp No."
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:minHeight="55dp"
+                    android:maxLength="10"
+                    android:textColor="@color/dark_grey"
+                    android:textColorHint="@color/dark_grey"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/EdtGotra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_weight="5"
+                    android:background="@drawable/form_bg_edittext_bg"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center|start"
+                    android:hint="Gotra"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:minHeight="55dp"
+                    android:textColor="@color/dark_grey"
+                    android:textColorHint="@color/dark_grey"
+                    android:textSize="14sp" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_weight="5"
+                    android:background="@drawable/form_bg_edittext_bg">
+
+                    <Spinner
+                        android:id="@+id/Spn_Gender"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:padding="5dp"
+                        android:entries="@array/spin_item_gender"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_weight="5"
+                    android:background="@drawable/form_bg_edittext_bg">
+
+                    <Spinner
+                        android:id="@+id/Spn_WorkingStatus"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:padding="5dp"
+                        android:entries="@array/spin_item_working_status"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_weight="5"
+                    android:background="@drawable/form_bg_edittext_bg">
+
+                    <Spinner
+                        android:id="@+id/Spn_WorkingAs"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:padding="5dp"
+                        android:entries="@array/spin_item_occupation"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_weight="5"
+                    android:background="@drawable/form_bg_edittext_bg">
+
+                    <Spinner
+                        android:id="@+id/Spn_AnnualIncome"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:padding="5dp"
+                        android:entries="@array/spin_item_annual_salary"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" />
+                </RelativeLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginEnd="20sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginBottom="20sp"
+                    android:weightSum="10">
+
+
+
+                    <Button
+                        android:id="@+id/Btn_submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/cw_button_shadow_primary"
+                        android:layout_margin="5dp"
+                        android:text="Submit"
+                        android:layout_weight="5"
+                        android:textColor="@color/white"
+                        />
+
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+</RelativeLayout>

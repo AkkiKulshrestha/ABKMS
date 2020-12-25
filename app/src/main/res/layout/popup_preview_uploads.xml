@@ -1,0 +1,142 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:float="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:background="@color/colorAccent">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:orientation="horizontal"
+            android:background="@color/colorPrimary"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:layout_weight="9"
+                android:id="@+id/title"
+                />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="25sp"
+                android:layout_height="25sp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                android:focusableInTouchMode="false"
+                float:srcCompat="@drawable/cross_white"
+                android:tint="@color/white"/>
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:fitsSystemWindows="true"
+            android:fillViewport="true"
+            android:background="@color/colorAccent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/form_background_color"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/IvPreviewImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_margin="5dp"
+                    android:minHeight="400sp"/>
+
+                <VideoView
+                    android:id="@+id/VvPreviewImage"
+                    android:layout_width="300sp"
+                    android:layout_height="500sp"
+                    android:padding="5dp"
+                    android:layout_margin="10dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:minHeight="200sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginEnd="5sp"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btn_retake"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_undo"
+                        android:minHeight="50sp"
+                        android:text="Retake"
+                        android:textColor="@color/white"
+                        android:drawableTint="@color/white"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:drawablePadding="10sp"
+                        android:padding="10dp"
+                        android:layout_margin="5dp"
+                        android:textSize="20sp"
+                        android:visibility="gone"
+                        />
+
+                    <Button
+                        android:id="@+id/btn_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_delete"
+                        android:minHeight="50sp"
+                        android:text="Delete"
+                        android:visibility="gone"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/white"
+                        android:drawableTint="@color/white"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:drawablePadding="10sp"
+                        android:padding="10dp"
+                        android:layout_margin="5dp"
+                        android:textSize="20sp"
+
+                        android:tint="@color/black"/>
+
+
+                </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

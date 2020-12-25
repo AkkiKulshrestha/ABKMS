@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include layout="@layout/toolback_with_back"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+                 <LinearLayout
+                    android:id="@+id/LayoutAddSuggestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="4"
+                        android:background="@drawable/btn_color_white">
+
+                        <Spinner
+                            android:id="@+id/Spn_Type"
+                            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:padding="5dp"
+                            android:entries="@array/spin_item_suggestion_request"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentStart="true" />
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/edt_member_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center|start"
+                        android:textColor="@color/brown"
+                        android:textSize="14sp"
+                        android:minHeight="55sp"
+                        android:padding="5dp"
+                        android:layout_margin="10sp"
+                        android:hint="@string/enter_member_name"
+                        android:background="@drawable/form_bg_edittext_bg"
+                        android:inputType="textPersonName"
+                        android:imeOptions="actionNext"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_title_subject"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center|start"
+                        android:textColor="@color/brown"
+                        android:textSize="14sp"
+                        android:minHeight="55sp"
+                        android:padding="5dp"
+                        android:layout_margin="10sp"
+                        android:hint="@string/enter_subject_title"
+                        android:background="@drawable/form_bg_edittext_bg"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
+                        />
+
+
+                    <EditText
+                        android:id="@+id/edt_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center|start"
+                        android:textColor="@color/brown"
+                        android:textSize="14sp"
+                        android:minHeight="55sp"
+                        android:padding="5dp"
+                        android:layout_margin="10sp"
+                        android:hint="@string/enter_description"
+                        android:background="@drawable/form_bg_edittext_bg"
+                        android:inputType="textMultiLine"
+                        android:minLines="5"
+                        android:imeOptions="actionDone"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/txt_attachment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/attachment"
+                        android:layout_margin="10sp"
+                        android:padding="5dp"
+                        android:textSize="14sp"/>
+
+
+                    <Button
+                        android:id="@+id/BtnAttachFile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Please Attach the file"
+                        android:background="@color/yellow"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginEnd="20sp"/>
+
+                    <ImageView
+                        android:id="@+id/Iv_UploadedImg"
+                        android:layout_width="200dp"
+                        android:layout_height="300dp"
+                        android:layout_margin="10sp"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/BtnSubmit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Submit"
+                        android:background="@color/green"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="30sp"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginEnd="20sp"
+                        android:layout_marginBottom="20sp"/>
+
+                </LinearLayout>
+
+              <LinearLayout
+                android:id="@+id/ll_parent_suggestion_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_margin="5dp"
+
+                android:padding="5dp">
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/form_background_color">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolback_with_back"/>
+
+    <ScrollView
+        android:id="@+id/Scroll_BelowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:background="@color/form_background_color">
+
+            <Button
+                android:id="@+id/BtnAddJob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cw_button_shadow"
+                android:textColor="@color/white"
+                android:layout_margin="5dp"
+                android:text="ADD NEW JOB"/>
+
+
+            <LinearLayout
+                android:id="@+id/ParentLayoutJobList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:background="@color/form_background_color"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

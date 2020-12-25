@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "419837736614",
+    "firebase_url": "https://allkulshrestha.firebaseio.com",
+    "project_id": "allkulshrestha",
+    "storage_bucket": "allkulshrestha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419837736614:android:1f5bc8a14bde08c43b2667",
+        "android_client_info": {
+          "package_name": "com.ascend.www.abkms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419837736614-j18jvpff3cfmqlo30ld6pvssqi745q9s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ascend.www.abkms",
+            "certificate_hash": "b0201cc8930dc449eeecccef625262ce3e6909a6"
+          }
+        },
+        {
+          "client_id": "419837736614-mm9eree02rlsck6ev3mi8j5it5epq6ec.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw7DR0D8OxB05Nwz2HrRgrJVXMrNoJOrU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419837736614-nd6mhvmbolamfjr5pnf5o9bb4mo5s71o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

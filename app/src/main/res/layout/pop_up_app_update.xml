@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="40sp"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimaryBlue"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:editable="false"
+                    android:cursorVisible="false"
+                    android:textColor="@color/white"
+                    android:textSize="17dp"
+                    android:layout_weight="9"
+                    android:id="@+id/title"
+                    android:text="Update Available"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/linear"
+                android:background="@color/white" >
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/linear"
+                    android:gravity="start"
+                    android:fitsSystemWindows="true"
+                    android:fillViewport="true">
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:id="@+id/Upgrade_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="start"
+                            android:layout_marginEnd="5sp"
+                            android:layout_marginStart="5sp"
+                            android:layout_marginTop="5sp"
+                            android:cursorVisible="false"
+                            android:editable="false"
+                            android:padding="5sp"
+                            android:text="@string/every_new_release_is_better_than_the_last"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+
+                        <TextView
+                            android:id="@+id/tv_ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textSize="17sp"
+                            android:textColor="@color/colorPrimaryBlue"
+                            android:editable="false"
+                            android:cursorVisible="false"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginStart="5sp"
+                            android:layout_gravity="end"
+                            android:gravity="end"
+                            android:textStyle="bold"
+                            android:text="UPDATE"
+                            android:layout_marginEnd="20sp"
+                            android:layout_marginBottom="20sp"
+                            android:padding="5sp"/>
+
+                    </LinearLayout>
+                </ScrollView>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

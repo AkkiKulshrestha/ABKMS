@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/form_background_color"
+    android:fitsSystemWindows="true"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/Edt_FamilyOrigin"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="Family Origin (Mool Niwas) *"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:imeOptions="actionNext"
+            android:inputType="text|textCapCharacters"
+            android:background="@drawable/btn_color_form_background"
+            android:padding="5dp"
+            android:textSize="17sp"/>
+
+
+
+
+        <EditText
+            android:id="@+id/Edt_Address1"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="@string/address_1"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:imeOptions="actionNext"
+            android:inputType="text|textCapCharacters"
+            android:background="@drawable/btn_color_form_background"
+            android:padding="5dp"
+            android:textSize="17sp"/>
+
+        <EditText
+            android:id="@+id/Edt_Address2"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="@string/address_2"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:imeOptions="actionNext"
+            android:inputType="text|textCapCharacters"
+            android:background="@drawable/btn_color_form_background"
+            android:padding="5dp"
+            android:textSize="17sp"/>
+
+        <EditText
+            android:id="@+id/Edt_Address3"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="@string/address_3"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:imeOptions="actionNext"
+            android:inputType="text|textCapCharacters"
+            android:background="@drawable/btn_color_form_background"
+            android:padding="5dp"
+            android:textSize="17sp"/>
+
+
+
+
+        <EditText
+            android:id="@+id/Edt_AddressPincode"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="@string/pincode"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:maxLength="6"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:background="@drawable/btn_color_form_background"
+            android:padding="5dp"
+            android:textSize="17sp"/>
+
+        <EditText
+            android:id="@+id/Edt_State"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="@string/state"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:imeOptions="actionNext"
+            android:inputType="text|textCapCharacters"
+            android:background="@drawable/btn_color_form_background"
+            android:padding="5dp"
+            android:textSize="17sp"/>
+
+        <EditText
+            android:id="@+id/Edt_City"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="@string/city"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:imeOptions="actionDone"
+            android:inputType="text|textCapCharacters"
+            android:background="@drawable/btn_color_form_background"
+            android:padding="5dp"
+            android:textSize="17sp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="YOU BELONGS TO WHICH AFFILIATED SABHA ? "/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/btn_color_white">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/Spn_AffiliatedAbkms"
+                style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:padding="5dp"/>
+        </RelativeLayout>
+
+
+
+
+
+
+    </LinearLayout>
+</ScrollView>

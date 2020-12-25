@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:app1="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="5sp"
+    android:layout_marginRight="5sp"
+    android:layout_gravity="center"
+    app:ignore="NamespaceTypo">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:id="@+id/layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:orientation="horizontal"
+
+            android:background="@color/colorPrimary"
+            android:weightSum="10">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:editable="false"
+                android:cursorVisible="false"
+                android:textColor="@color/white"
+                android:textSize="11dp"
+                android:layout_weight="9"
+                android:textAllCaps="true"
+                android:id="@+id/title"
+                android:text="DOWNLOAD REPORT"/>
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:layout_weight="1"
+                android:src="@drawable/cross_white"
+                android:tint="@color/white"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                android:focusableInTouchMode="false"
+                />
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/header1"
+            android:background="@color/form_background_color"
+            android:layout_below="@+id/layout_title"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <Button
+                    android:id="@+id/BtnDownloadCompleteReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:layout_margin="20sp"
+                    android:text="Download Complete Report"
+                    android:textColor="@color/white"/>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15sp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/btn_color_white">
+
+                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                        android:id="@+id/Spn_AffiliatedAbkms"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:padding="5dp"/>
+                </RelativeLayout>
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5sp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/btn_color_white">
+
+                    <Spinner
+                        android:id="@+id/Spn_FilterMonthlyIncome"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:entries="@array/spin_item_annual_salary"
+                        android:padding="5dp"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5sp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/btn_color_white">
+
+                    <Spinner
+                        android:id="@+id/Spn_FilterGender"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:entries="@array/spin_item_gender"
+                        android:padding="5dp"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5sp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/btn_color_white">
+
+                    <Spinner
+                        android:id="@+id/Spn_FilterMaritalStatus"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:entries="@array/spin_item_marital_status_all"
+                        android:padding="5dp"/>
+                </RelativeLayout>
+
+
+
+
+
+                <Button
+                    android:id="@+id/BtnDownloadReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:layout_margin="20sp"
+                    android:text="Download Filtered Report"
+                    android:textColor="@color/white"/>
+
+
+
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+</RelativeLayout>

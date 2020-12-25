@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10"
+        android:background="@color/form_background_color"
+        android:padding="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_row_id"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/row_Edt_ChildName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:minHeight="50sp"
+                android:hint="Child Name"
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:inputType="textPersonName"
+                android:minLines="2"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:layout_weight="6"
+                android:imeOptions="actionNext"
+                android:background="@drawable/form_bg_edittext_bg"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/row_Edt_ChildAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="50sp"
+                android:hint="Age"
+                android:layout_gravity="center|start"
+                android:gravity="center|start"
+                android:inputType="number"
+                android:maxLength="2"
+                android:layout_weight="3"
+                android:layout_margin="5dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:imeOptions="actionDone"
+                android:background="@drawable/form_bg_edittext_bg"/>
+
+            <ImageView
+                android:id="@+id/row_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_delete"
+                android:minHeight="30sp"
+                android:minWidth="30sp"
+                android:visibility="visible"
+
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="5"
+
+                android:background="@drawable/btn_color_white">
+
+                <Spinner
+                    style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:id="@+id/Spn_ChildMaritalStatus"
+                    android:entries="@array/spin_item_marital_status_all"
+                    android:padding="5dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="5"
+
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/btn_color_white">
+
+                <Spinner
+                    style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:id="@+id/Spn_ChildOccupation"
+                    android:entries="@array/spin_item_occupation"
+                    android:padding="5dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

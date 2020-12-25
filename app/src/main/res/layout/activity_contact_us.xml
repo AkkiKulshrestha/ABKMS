@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/form_background_color">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolback_with_back"/>
+
+    <ScrollView
+        android:id="@+id/Scroll_BelowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginBottom="50sp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10sp"
+            android:padding="10sp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="For any app related queries. Feel free \nto contact at:"
+                android:layout_gravity="center|top"
+                android:gravity="center|start"
+                android:padding="10sp"
+                android:singleLine="false"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="10sp"
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/developer_name"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="10sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="10sp"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+
+
+
+            <TextView
+                android:id="@+id/tv_mobile_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+91-9004054630 \n+91-9594619804 "
+                android:layout_gravity="center|top"
+                android:gravity="center|start"
+                android:padding="10sp"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="5sp"
+                android:textSize="14sp"
+                android:drawableStart="@drawable/ic_phone_android"
+                android:drawablePadding="5sp"
+                android:autoLink="phone"
+
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_emailId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/company_email"
+                android:layout_gravity="center"
+                android:gravity="center|start"
+                android:padding="10sp"
+                android:layout_marginBottom="5sp"
+                android:textSize="14sp"
+                android:drawableStart="@drawable/ic_mail_outline"
+                android:drawablePadding="5sp"
+                android:autoLink="email"
+                android:textColor="@color/colorPrimaryBlue"/>
+
+
+            <WebView
+                android:id="@+id/Webview_AddressLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:layout_margin="10sp"
+                android:minHeight="250sp"/>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>
