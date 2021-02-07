@@ -25,7 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.ascend.www.abkms.R;
-import com.ascend.www.abkms.adapters.YaadiListCountAdapter;
+import com.ascend.www.abkms.adapters.GroupListCountAdapter;
 import com.ascend.www.abkms.model.YadiListModel;
 import com.ascend.www.abkms.utils.CommonMethods;
 import com.ascend.www.abkms.utils.ConnectionDetector;
@@ -48,7 +48,7 @@ public class SearchFilterActivity extends AppCompatActivity {
     SwipeRefreshLayout refreshLayout;
     RecyclerView recycler_list;
     RecyclerView.LayoutManager layoutManager;
-    private YaadiListCountAdapter yaadiListCountAdapter;
+    private GroupListCountAdapter groupListCountAdapter;
     ArrayList<YadiListModel> yadiModel_list = new ArrayList<>();
     YadiListModel yadiListModel;
     ProgressDialog myDialog;
@@ -110,7 +110,7 @@ public class SearchFilterActivity extends AppCompatActivity {
                     public void run() {
                         yadiModel_list.clear();
                         showData();
-                        yaadiListCountAdapter.notifyDataSetChanged();
+                        groupListCountAdapter.notifyDataSetChanged();
                         refreshLayout.setRefreshing(false);
                     }
                 },1000);
@@ -133,9 +133,9 @@ public class SearchFilterActivity extends AppCompatActivity {
         myDialog.show();
         if(yadiModel_list!=null && yadiModel_list.size()>0){
             yadiModel_list = new ArrayList<>();
-            yaadiListCountAdapter = new YaadiListCountAdapter(SearchFilterActivity.this, yadiModel_list, refreshLayout);
-            recycler_list.setAdapter(yaadiListCountAdapter);
-            yaadiListCountAdapter.notifyDataSetChanged();
+            groupListCountAdapter = new GroupListCountAdapter(SearchFilterActivity.this, yadiModel_list, refreshLayout);
+            recycler_list.setAdapter(groupListCountAdapter);
+            groupListCountAdapter.notifyDataSetChanged();
 
         }
         String Uiid_id = UUID.randomUUID().toString();
@@ -188,9 +188,9 @@ public class SearchFilterActivity extends AppCompatActivity {
 
                         }
 
-                        yaadiListCountAdapter = new YaadiListCountAdapter(SearchFilterActivity.this, yadiModel_list, refreshLayout);
-                        recycler_list.setAdapter(yaadiListCountAdapter);
-                        yaadiListCountAdapter.notifyDataSetChanged();
+                        groupListCountAdapter = new GroupListCountAdapter(SearchFilterActivity.this, yadiModel_list, refreshLayout);
+                        recycler_list.setAdapter(groupListCountAdapter);
+                        groupListCountAdapter.notifyDataSetChanged();
 
 
                     } catch (JSONException e) {
@@ -234,8 +234,8 @@ public class SearchFilterActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                if (yaadiListCountAdapter != null){
-                    yaadiListCountAdapter.getFilter().filter(newText);
+                if (groupListCountAdapter != null){
+                    groupListCountAdapter.getFilter().filter(newText);
                 }
                 return true;
             }

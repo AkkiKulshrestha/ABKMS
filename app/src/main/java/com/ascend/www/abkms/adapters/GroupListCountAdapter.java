@@ -15,48 +15,48 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.ascend.www.abkms.activities.MembersListActivity;
 import com.ascend.www.abkms.R;
+import com.ascend.www.abkms.activities.MembersListActivity;
 import com.ascend.www.abkms.model.YadiListModel;
 import com.ascend.www.abkms.utils.UtilitySharedPreferences;
 
 import java.util.ArrayList;
 
-public class YaadiListCountAdapter extends RecyclerView.Adapter<YaadiListCountAdapter.YaadiViewHolder> {
+public class GroupListCountAdapter extends RecyclerView.Adapter<GroupListCountAdapter.GroupViewHolder> {
 
     Context mCtx;
-    private ArrayList<YadiListModel> yaadiArrayList;
-    private ArrayList<YadiListModel> yaadiFilteredList;
     SwipeRefreshLayout refreshLayout;
     int lastPosition = -1;
+    private ArrayList<YadiListModel> groupArrayList;
+    private ArrayList<YadiListModel> groupFilteredList;
 
-    public  YaadiListCountAdapter(Context mCtx, ArrayList<YadiListModel> yaadiArrayList, SwipeRefreshLayout refreshLayout) {
+    public GroupListCountAdapter(Context mCtx, ArrayList<YadiListModel> groupArrayList, SwipeRefreshLayout refreshLayout) {
         this.mCtx = mCtx;
-        this.yaadiArrayList = yaadiArrayList;
-        this.yaadiFilteredList = yaadiArrayList;
+        this.groupArrayList = groupArrayList;
+        this.groupFilteredList = groupArrayList;
         this.refreshLayout = refreshLayout;
     }
 
 
     @Override
-    public YaadiListCountAdapter.YaadiViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public GroupListCountAdapter.GroupViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_yadi_list_count, viewGroup, false);
-        return new YaadiListCountAdapter.YaadiViewHolder(view);
+        return new GroupViewHolder(view);
 
     }
 
     @Override
-    public void onBindViewHolder(final YaadiListCountAdapter.YaadiViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(final GroupListCountAdapter.GroupViewHolder viewHolder, final int position) {
 
 
-        YadiListModel dataObject = yaadiFilteredList.get(position);
+        YadiListModel dataObject = groupFilteredList.get(position);
 
-        //viewHolder.tv_member_id.setText(yaadiFilteredList.get(position).getId());
+        //viewHolder.tv_member_id.setText(groupFilteredList.get(position).getId());
 
-        viewHolder.tv_name.setText(yaadiFilteredList.get(position).getList_name().toUpperCase());
-        viewHolder.tv_actual_name.setText(yaadiFilteredList.get(position).getActual_name().toUpperCase());
-        viewHolder.tv_count.setText(mCtx.getResources().getString(R.string.total)+ ": " +yaadiFilteredList.get(position).getList_count());
-        viewHolder.tv_search_filter_by.setText(yaadiFilteredList.get(position).getFilter_by());
+        viewHolder.tv_name.setText(groupFilteredList.get(position).getList_name().toUpperCase());
+        viewHolder.tv_actual_name.setText(groupFilteredList.get(position).getActual_name().toUpperCase());
+        viewHolder.tv_count.setText(mCtx.getResources().getString(R.string.total) + ": " + groupFilteredList.get(position).getList_count());
+        viewHolder.tv_search_filter_by.setText(groupFilteredList.get(position).getFilter_by());
         Animation animation = AnimationUtils.loadAnimation(mCtx, (position > lastPosition) ? R.anim.up_from_bottom : R.anim.down_from_top);
         viewHolder.itemView.startAnimation(animation);
         lastPosition = position;
@@ -65,7 +65,7 @@ public class YaadiListCountAdapter extends RecyclerView.Adapter<YaadiListCountAd
             @Override
             public void onClick(View view) {
 
-                UtilitySharedPreferences.setPrefs(mCtx,"yadi_filter_by",viewHolder.tv_search_filter_by.getText().toString());
+                UtilitySharedPreferences.setPrefs(mCtx, "yadi_filter_by", viewHolder.tv_search_filter_by.getText().toString());
                 Intent i = new Intent(mCtx, MembersListActivity.class);
                 i.putExtra("filter_by", viewHolder.tv_actual_name.getText().toString());
                 mCtx.startActivity(i);
@@ -75,7 +75,7 @@ public class YaadiListCountAdapter extends RecyclerView.Adapter<YaadiListCountAd
     }
 
     @Override
-    public void onViewDetachedFromWindow(YaadiListCountAdapter.YaadiViewHolder holder) {
+    public void onViewDetachedFromWindow(GroupListCountAdapter.GroupViewHolder holder) {
         super.onViewDetachedFromWindow(holder);
         holder.itemView.clearAnimation();
     }
@@ -90,13 +90,13 @@ public class YaadiListCountAdapter extends RecyclerView.Adapter<YaadiListCountAd
 
                 if (charString.isEmpty()) {
 
-                    yaadiFilteredList = yaadiArrayList;
+                    groupFilteredList = groupArrayList;
                     //mFilteredList = mArrayList;
                 } else {
 
                     ArrayList<YadiListModel> filteredList = new ArrayList<>();
 
-                    for (YadiListModel inprogressInspectionmod : yaadiArrayList) {
+                    for (YadiListModel inprogressInspectionmod : groupArrayList) {
 
                         if (inprogressInspectionmod.getActual_name().toLowerCase().contains(charString)) {
 
@@ -104,17 +104,17 @@ public class YaadiListCountAdapter extends RecyclerView.Adapter<YaadiListCountAd
                         }
                     }
 
-                    yaadiFilteredList = filteredList;
+                    groupFilteredList = filteredList;
                 }
 
                 FilterResults filterResults = new FilterResults();
-                filterResults.values = yaadiFilteredList;
+                filterResults.values = groupFilteredList;
                 return filterResults;
             }
 
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                yaadiFilteredList = (ArrayList<YadiListModel>) filterResults.values;
+                groupFilteredList = (ArrayList<YadiListModel>) filterResults.values;
                 notifyDataSetChanged();
             }
         };
@@ -122,18 +122,18 @@ public class YaadiListCountAdapter extends RecyclerView.Adapter<YaadiListCountAd
 
     @Override
     public int getItemCount() {
-        return yaadiFilteredList.size();
+        return groupFilteredList.size();
     }
 
 
-    public class YaadiViewHolder extends RecyclerView.ViewHolder {
+    public static class GroupViewHolder extends RecyclerView.ViewHolder {
 
         //customer vehicle info
-        TextView tv_id, tv_name,tv_actual_name, tv_count,tv_search_filter_by;
+        TextView tv_id, tv_name, tv_actual_name, tv_count, tv_search_filter_by;
         RelativeLayout recycleritem;
         private ObjectAnimator anim;
 
-        public YaadiViewHolder(View itemView) {
+        public GroupViewHolder(View itemView) {
             super(itemView);
             recycleritem = (RelativeLayout) itemView.findViewById(R.id.recycleritem);
             tv_id = (TextView) itemView.findViewById(R.id.tv_id);
@@ -143,7 +143,6 @@ public class YaadiListCountAdapter extends RecyclerView.Adapter<YaadiListCountAd
             tv_search_filter_by = (TextView) itemView.findViewById(R.id.tv_search_filter_by);
 
         }
-
 
 
     }

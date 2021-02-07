@@ -20,7 +20,6 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +29,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -40,16 +38,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.ascend.www.abkms.activities.AddUpdateUserDetail;
 import com.ascend.www.abkms.activities.SignIn_SignUpActivity;
 import com.ascend.www.abkms.utils.CommonMethods;
 import com.ascend.www.abkms.utils.ConnectionDetector;
-import com.ascend.www.abkms.utils.MyValidator;
 import com.ascend.www.abkms.utils.UtilitySharedPreferences;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -58,9 +53,7 @@ import com.google.firebase.auth.FirebaseUser;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -68,16 +61,17 @@ import java.util.concurrent.TimeUnit;
 import static com.ascend.www.abkms.webservices.RestClient.ROOT_URL;
 
 
-public class SplashActivity extends AppCompatActivity implements  GoogleApiClient.OnConnectionFailedListener{
+public class SplashActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
-    private static int SPLASH_TIME_OUT = 3000;
     private static final int REQUEST_PERMISSIONS_REQUEST_CODE = 24;
-    Thread splashTread;
     private static final String TAG = "SplashActivity";
-    String Force_Update_flag="0";;
+    private static int SPLASH_TIME_OUT = 3000;
+    Thread splashTread;
+    String Force_Update_flag = "0";
+    ;
     int YourApkVersionCode;
-    String SystemOtp,StrMemberId="",StrMobileNo="",StrEmailId="",StrName="",SavedPassword="",StrPassword="",IS_ADMIN="",IS_PASSWORD_SET="";
-    EditText edt_member_name,edt_member_mobile,edt_member_email,edt_password;
+    String SystemOtp, StrMemberId = "", StrMobileNo = "", StrEmailId = "", StrName = "", SavedPassword = "", StrPassword = "", IS_ADMIN = "", IS_PASSWORD_SET = "";
+    EditText edt_member_name, edt_member_mobile, edt_member_email, edt_password;
     ProgressDialog myDialog;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -95,9 +89,9 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
     }
 
     private void init() {
-        String languageToLoad  = "eng"; // your language
+        String languageToLoad = "eng"; // your language
 
-        StrMobileNo =  UtilitySharedPreferences.getPrefs(getApplicationContext(), "UserMobile");
+        StrMobileNo = UtilitySharedPreferences.getPrefs(getApplicationContext(), "UserMobile");
         StrMemberId = UtilitySharedPreferences.getPrefs(getApplicationContext(), "MemberId");
         Locale locale = new Locale(languageToLoad);
         Locale.setDefault(locale);
@@ -110,8 +104,8 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
         if (isInternetPresent) {
             force_update();
             //startSpalashScreen();
-        }else {
-            CommonMethods.DisplayToastWarning(getApplicationContext(),"Please check Internet Connection");
+        } else {
+            CommonMethods.DisplayToastWarning(getApplicationContext(), "Please check Internet Connection");
         }
 
     }
@@ -148,8 +142,8 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
             if (isInternetPresent) {
                 force_update();
                 //startSpalashScreen();
-            }else {
-                CommonMethods.DisplayToastWarning(getApplicationContext(),"Please check Internet Connection");
+            } else {
+                CommonMethods.DisplayToastWarning(getApplicationContext(), "Please check Internet Connection");
             }
 
         } else {  //No user has not granted the permissions yet. Request now.
@@ -187,8 +181,8 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
                                 if (isInternetPresent) {
                                     force_update();
                                     //startSpalashScreen();
-                                }else {
-                                    CommonMethods.DisplayToastWarning(getApplicationContext(),"Please check Internet Connection");
+                                } else {
+                                    CommonMethods.DisplayToastWarning(getApplicationContext(), "Please check Internet Connection");
                                 }
                             } else if (!checkPermissions()) {
                                 requestPermissions();
@@ -207,7 +201,7 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
      * Return the current state of the permissions needed.
      */
     private boolean checkPermissions() {
-        int permissionState1 = ActivityCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE);
+        int permissionState1 = ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
 
         int permissionState2 = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
@@ -286,8 +280,8 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
                 if (isInternetPresent) {
                     force_update();
                     //startSpalashScreen();
-                }else {
-                    CommonMethods.DisplayToastWarning(getApplicationContext(),"Please check Internet Connection");
+                } else {
+                    CommonMethods.DisplayToastWarning(getApplicationContext(), "Please check Internet Connection");
                 }
             } else {
                 // Permission denied.
@@ -317,7 +311,7 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
         int currentVersionCode = getCurrentVersion();
         //Log.d("Current version = ",currentVersionCode);
         String Uiid_id = UUID.randomUUID().toString();
-        final String get_latest_version_info = ROOT_URL +"getLatestUpdateVersion.php?_"+Uiid_id;
+        final String get_latest_version_info = ROOT_URL + "getLatestUpdateVersion.php?_" + Uiid_id;
         Log.d("URL --->", get_latest_version_info);
         try {
             ConnectionDetector cd = new ConnectionDetector(this);
@@ -327,7 +321,7 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
                     @Override
                     public void onResponse(String response) {
                         try {
-                            Log.d("Response",""+response);
+                            Log.d("Response", "" + response);
                             String latestVersion = "";
                             JSONObject Jobj = new JSONObject(response);
                             String data = Jobj.getString("data");
@@ -339,9 +333,9 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
                             Force_Update_flag = jobject.getString("is_force_update");
                             update_dialog(VersionCode);
 
-                            Log.d("Latest version:",latestVersion);
+                            Log.d("Latest version:", latestVersion);
                         } catch (Exception e) {
-                            Log.d("Exception",e.toString());
+                            Log.d("Exception", e.toString());
                         }
                     }
                 }, new Response.ErrorListener() {
@@ -349,47 +343,46 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
                     public void onErrorResponse(VolleyError volleyError) {
                         volleyError.printStackTrace();
                         Log.d("Vollley Err", volleyError.toString());
-                        if(volleyError.toString().equalsIgnoreCase("com.android.volley.ServerError")){
-                            CommonMethods.DisplayToast(getApplicationContext(),"App under maintenance");
+                        if (volleyError.toString().equalsIgnoreCase("com.android.volley.ServerError")) {
+                            CommonMethods.DisplayToast(getApplicationContext(), "App under maintenance");
                         }
                     }
                 });
                 RequestQueue requestQueue = Volley.newRequestQueue(this);
                 int socketTimeout = 50000;//30 seconds - change to what you want
-                RetryPolicy policy = new DefaultRetryPolicy((int) TimeUnit.SECONDS.toMillis(20),0,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+                RetryPolicy policy = new DefaultRetryPolicy((int) TimeUnit.SECONDS.toMillis(20), 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
                 stringRequest.setRetryPolicy(policy);
                 requestQueue.add(stringRequest);
-            }else {
-                CommonMethods.DisplayToast(this,"No Internet Connection");
+            } else {
+                CommonMethods.DisplayToast(this, "No Internet Connection");
             }
-        }catch (Exception ex)
-        {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
-    private int getCurrentVersion(){
+    private int getCurrentVersion() {
         PackageManager pm = this.getPackageManager();
         PackageInfo pInfo = null;
         try {
-            pInfo =  pm.getPackageInfo(this.getPackageName(),0);
+            pInfo = pm.getPackageInfo(this.getPackageName(), 0);
         } catch (PackageManager.NameNotFoundException e1) {
             e1.printStackTrace();
         }
         String currentVersion = pInfo.versionName;
         YourApkVersionCode = pInfo.versionCode;
-        Log.d("YourVersionCode",""+YourApkVersionCode);
+        Log.d("YourVersionCode", "" + YourApkVersionCode);
         String version_code = String.valueOf(YourApkVersionCode);
         return YourApkVersionCode;
     }
 
 
     private void update_dialog(String versionCode) {
-        if(versionCode!="" || versionCode!=null){
+        if (versionCode != "" || versionCode != null) {
             int v_code = Integer.valueOf(versionCode);
-            if((YourApkVersionCode < v_code) && Force_Update_flag.equalsIgnoreCase("1")){
-                Log.d("version code",""+v_code);
-                Log.d("Your APK CODE ",""+YourApkVersionCode);
+            if ((YourApkVersionCode < v_code) && Force_Update_flag.equalsIgnoreCase("1")) {
+                Log.d("version code", "" + v_code);
+                Log.d("Your APK CODE ", "" + YourApkVersionCode);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -400,9 +393,9 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
                         dialog.setContentView(R.layout.pop_up_app_update);
                         dialog.getWindow().setBackgroundDrawable(
                                 new ColorDrawable(android.graphics.Color.TRANSPARENT));
-                        TextView title = (TextView)dialog.findViewById(R.id.title) ;
-                        TextView Upgrade_text = (TextView)dialog.findViewById(R.id.Upgrade_text) ;
-                        TextView tv_ok = (TextView)dialog.findViewById(R.id.tv_ok);
+                        TextView title = (TextView) dialog.findViewById(R.id.title);
+                        TextView Upgrade_text = (TextView) dialog.findViewById(R.id.Upgrade_text);
+                        TextView tv_ok = (TextView) dialog.findViewById(R.id.tv_ok);
                         dialog.show();
                         tv_ok.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -435,9 +428,8 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
                                 };
 
 
-
                                 UtilitySharedPreferences.clearPref(getApplicationContext());
-                                UtilitySharedPreferences.setPrefs(getApplicationContext(),"IsLoggedIn","false");
+                                UtilitySharedPreferences.setPrefs(getApplicationContext(), "IsLoggedIn", "false");
                                 CommonMethods.deleteCache(getApplicationContext());
                                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName())));
                                 finish();
@@ -445,31 +437,30 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
                         });
                     }
                 }, SPLASH_TIME_OUT);
-            }else
-            {
+            } else {
                 /*UtilitySharedPreferences.clearPref(this);*/
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if((StrMemberId!=null &&  !StrMemberId.equalsIgnoreCase(""))|| (StrMobileNo!=null &&  !StrMobileNo.equalsIgnoreCase(""))  ) {
+                        if ((StrMemberId != null && !StrMemberId.equalsIgnoreCase("")) || (StrMobileNo != null && !StrMobileNo.equalsIgnoreCase(""))) {
                             getUserCurrentStateStatus();
-                        }else {
+                        } else {
                             Intent i = new Intent(getApplicationContext(), SignIn_SignUpActivity.class);
                             startActivity(i);
-                            overridePendingTransition(R.animator.move_left,R.animator.move_right);
+                            overridePendingTransition(R.animator.move_left, R.animator.move_right);
                             finish();
                         }
                     }
                 }, SPLASH_TIME_OUT);
 
             }
-        }else{
-            if((StrMemberId!=null &&  !StrMemberId.equalsIgnoreCase(""))|| (StrMobileNo!=null &&  !StrMobileNo.equalsIgnoreCase(""))  ) {
+        } else {
+            if ((StrMemberId != null && !StrMemberId.equalsIgnoreCase("")) || (StrMobileNo != null && !StrMobileNo.equalsIgnoreCase(""))) {
                 getUserCurrentStateStatus();
-            }else {
+            } else {
                 Intent i = new Intent(getApplicationContext(), SignIn_SignUpActivity.class);
                 startActivity(i);
-                overridePendingTransition(R.animator.move_left,R.animator.move_right);
+                overridePendingTransition(R.animator.move_left, R.animator.move_right);
                 finish();
 
             }
@@ -480,9 +471,9 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
     private void getUserCurrentStateStatus() {
 
         String Uiid_id = UUID.randomUUID().toString();
-        String URL_FetchDetails = ROOT_URL + "fetch_user_detail_from_mobile.php?_"+Uiid_id+"&mobile="+StrMobileNo;
+        String URL_FetchDetails = ROOT_URL + "fetch_user_detail_from_mobile.php?_" + Uiid_id + "&mobile=" + StrMobileNo;
         try {
-            Log.d("URL_FetchDetails",URL_FetchDetails);
+            Log.d("URL_FetchDetails", URL_FetchDetails);
 
             ConnectionDetector cd = new ConnectionDetector(this);
             boolean isInternetPresent = cd.isConnectingToInternet();
@@ -545,25 +536,20 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
                                             startActivity(i);
                                             overridePendingTransition(R.animator.move_left, R.animator.move_right);
                                             finish();
-                                        }else {
+                                        } else {
 
                                             Intent i = new Intent(getApplicationContext(), SignIn_SignUpActivity.class);
                                             startActivity(i);
                                             overridePendingTransition(R.animator.move_left, R.animator.move_right);
                                             finish();
                                         }
-
-                                    }else {
+                                    } else {
                                         Intent i = new Intent(getApplicationContext(), SignIn_SignUpActivity.class);
                                         startActivity(i);
-                                        overridePendingTransition(R.animator.move_left,R.animator.move_right);
+                                        overridePendingTransition(R.animator.move_left, R.animator.move_right);
                                         finish();
                                     }
-
-
-
-
-                                }catch (Exception e ){
+                                } catch (Exception e) {
                                     e.printStackTrace();
 
                                 }
@@ -577,7 +563,7 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
                         error.printStackTrace();
 
                     }
-                }) ;
+                });
 
                 int socketTimeout = 50000; //30 seconds - change to what you want
                 RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
@@ -599,14 +585,9 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
     }
 
 
-
-
     private void fetchSliderImageArray() {
 
-
-
         String Uiid_id = UUID.randomUUID().toString();
-
 
         ConnectionDetector cd = new ConnectionDetector(getApplicationContext());
         boolean isInternetPresent = cd.isConnectingToInternet();
@@ -617,17 +598,9 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
                 @Override
                 public void onResponse(String response) {
                     try {
-
-
                         Log.d("URL Response", "--> " + response);
-
                         JSONObject jsonresponse = new JSONObject(response);
-
-                        UtilitySharedPreferences.setPrefs(getApplicationContext(),"SliderImagesArray",jsonresponse.toString());
-
-
-
-
+                        UtilitySharedPreferences.setPrefs(getApplicationContext(), "SliderImagesArray", jsonresponse.toString());
                     } catch (JSONException e) {
 
                         e.printStackTrace();
@@ -639,17 +612,16 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
 
                     volleyError.printStackTrace();
                     CommonMethods.DisplayToastWarning(getApplicationContext(), "Something goes wrong. Please try again");
-                    //Toast.makeText(getApplicationContext(), volleyError.toString(), Toast.LENGTH_LONG).show();
                 }
-            }) ;
+            });
             int socketTimeout = 50000; //30 seconds - change to what you want
             RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
             postrequest.setRetryPolicy(policy);
             // RequestQueue requestQueue = Volley.newRequestQueue(this, new HurlStack(null, getSocketFactory()));
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             requestQueue.add(postrequest);
-        }else {
-            CommonMethods.DisplayToastWarning(getApplicationContext(),"No Internet Connect");
+        } else {
+            CommonMethods.DisplayToastWarning(getApplicationContext(), "No Internet Connect");
 
         }
     }
@@ -676,7 +648,7 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
         // TODO Auto-generated method stub
 
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if(splashTread!=null && splashTread.isAlive()) {
+            if (splashTread != null && splashTread.isAlive()) {
                 splashTread.interrupt();
             }
 
@@ -695,7 +667,7 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
     @Override
     public void onStart() {
         super.onStart();
-        if (mAuthListener != null && mAuth!=null) {
+        if (mAuthListener != null && mAuth != null) {
             mAuth.addAuthStateListener(mAuthListener);
         }
 
@@ -708,7 +680,6 @@ public class SplashActivity extends AppCompatActivity implements  GoogleApiClien
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
-
 
 
     @Override
